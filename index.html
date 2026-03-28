@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1508 E Sourwood Ct | Gilbert, AZ 85298</title>
+  <meta name="description" content="3 Bed, 2.5 Bath single-story home in gated Waterston North. Over $75K in premium upgrades. Built 2023 by Tri Pointe Homes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --charcoal: #1a1a1a;
+      --dark: #2d2d2d;
+      --warm: #8b7355;
+      --warm-light: #c4a97d;
+      --warm-bg: #f9f6f2;
+      --light: #fafafa;
+      --white: #ffffff;
+      --gray: #6b6b6b;
+      --light-gray: #e8e8e8;
+      --font-body: 'DM Sans', sans-serif;
+      --font-display: 'Playfair Display', serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--charcoal); background: var(--white); line-height: 1.6; }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(26,26,26,0.95); backdrop-filter: blur(10px);
+      padding: 0 2rem; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: all 0.3s;
+    }
+    .nav-address { color: #fff; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.02em; }
+    .nav-price { color: var(--warm-light); font-weight: 700; font-size: 1.1rem; }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a { color: #ccc; text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; height: 100vh; min-height: 600px;
+      background: url('images/hero-drone-lifetime.jpg') center center / cover no-repeat;
+      display: flex; align-items: flex-end; justify-content: center;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.2) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2; text-align: center;
+      padding: 3rem 2rem 4rem; max-width: 800px;
+    }
+    .hero-badge {
+      display: inline-block; background: var(--warm); color: #fff;
+      padding: 0.4rem 1.2rem; border-radius: 2px; font-size: 0.8rem;
+      font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      font-family: var(--font-display); color: #fff; font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 500; line-height: 1.2; margin-bottom: 0.8rem;
+    }
+    .hero-sub { color: rgba(255,255,255,0.85); font-size: 1.1rem; font-weight: 400; }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--charcoal); padding: 0;
+      display: grid; grid-template-columns: repeat(6, 1fr);
+    }
+    .stat {
+      padding: 1.8rem 1rem; text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-value { color: var(--warm-light); font-size: 1.5rem; font-weight: 700; }
+    .stat-label { color: rgba(255,255,255,0.5); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.3rem; }
+
+    /* ── SECTIONS ── */
+    .section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+    .section-dark { background: var(--charcoal); }
+    .section-warm { background: var(--warm-bg); }
+    .section-full { max-width: 100%; padding-left: 0; padding-right: 0; }
+
+    .section-label {
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em;
+      color: var(--warm); font-weight: 600; margin-bottom: 0.8rem;
+    }
+    .section-title {
+      font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 500; line-height: 1.25; margin-bottom: 1.2rem;
+    }
+    .section-text { color: var(--gray); font-size: 1.05rem; line-height: 1.8; max-width: 720px; }
+
+    /* ── HIGHLIGHTS STRIP ── */
+    .highlights {
+      background: var(--warm-bg); padding: 3.5rem 2rem;
+    }
+    .highlights-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
+    }
+    .highlight-card { text-align: center; padding: 1.5rem 1rem; }
+    .highlight-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
+    .highlight-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.3rem; }
+    .highlight-desc { color: var(--gray); font-size: 0.85rem; line-height: 1.5; }
+
+    /* ── PHOTO GRID ── */
+    .photo-grid {
+      display: grid; gap: 6px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .photo-grid.hero-grid {
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 300px 300px;
+    }
+    .photo-grid.hero-grid .grid-img:first-child {
+      grid-row: 1 / 3;
+    }
+    .photo-grid.quad {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 350px 350px;
+    }
+    .photo-grid.trio {
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 400px;
+    }
+    .photo-grid.duo {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 450px;
+    }
+    .grid-img {
+      overflow: hidden; cursor: pointer; position: relative;
+    }
+    .grid-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .grid-img:hover img { transform: scale(1.03); }
+
+    /* ── FEATURE ROW ── */
+    .feature-row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+      min-height: 500px;
+    }
+    .feature-row.reverse .feature-media { order: 2; }
+    .feature-row.reverse .feature-content { order: 1; }
+    .feature-media { position: relative; overflow: hidden; }
+    .feature-media img { width: 100%; height: 100%; object-fit: cover; }
+    .feature-content {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 4rem;
+    }
+    .feature-content.dark { background: var(--charcoal); }
+    .feature-content.dark .section-label { color: var(--warm-light); }
+    .feature-content.dark .section-title { color: #fff; }
+    .feature-content.dark .section-text { color: rgba(255,255,255,0.65); }
+    .feature-content.warm-bg { background: var(--warm-bg); }
+
+    /* ── FEATURE LIST ── */
+    .feature-list { list-style: none; margin-top: 1.5rem; }
+    .feature-list li {
+      padding: 0.6rem 0; border-bottom: 1px solid var(--light-gray);
+      font-size: 0.95rem; color: var(--dark);
+      display: flex; align-items: baseline; gap: 0.6rem;
+    }
+    .feature-list li::before {
+      content: ''; display: inline-block; width: 6px; height: 6px;
+      background: var(--warm); border-radius: 50%; flex-shrink: 0; margin-top: 0.5rem;
+    }
+    .feature-content.dark .feature-list li { border-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); }
+    .feature-content.dark .feature-list li::before { background: var(--warm-light); }
+
+    /* ── GALLERY MOSAIC ── */
+    .gallery-section { padding: 5rem 2rem; background: var(--light); }
+    .gallery-mosaic {
+      max-width: 1200px; margin: 2rem auto 0;
+      display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 220px; gap: 8px;
+    }
+    .gallery-mosaic .grid-img:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+    .gallery-mosaic .grid-img:nth-child(5) { grid-column: span 2; }
+
+    /* ── COMMUNITY ── */
+    .community-grid {
+      max-width: 1200px; margin: 2rem auto 0;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+    }
+    .community-grid .grid-img { height: 400px; }
+
+    /* ── UPGRADES TOTAL ── */
+    .upgrades-banner {
+      background: var(--charcoal); text-align: center; padding: 4rem 2rem;
+    }
+    .upgrades-amount {
+      font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem);
+      color: var(--warm-light); font-weight: 600;
+    }
+    .upgrades-label {
+      color: rgba(255,255,255,0.5); font-size: 0.85rem; text-transform: uppercase;
+      letter-spacing: 0.15em; margin-top: 0.5rem;
+    }
+
+    /* ── DETAILS GRID ── */
+    .details-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem;
+      margin-top: 2.5rem;
+    }
+    .detail-group h4 {
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--warm); margin-bottom: 1rem; font-weight: 600;
+    }
+    .detail-group ul { list-style: none; }
+    .detail-group li { padding: 0.45rem 0; font-size: 0.92rem; color: var(--dark); border-bottom: 1px solid var(--light-gray); }
+
+    /* ── LIFETIME CALLOUT ── */
+    .lifetime-callout {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      padding: 4rem 2rem; text-align: center;
+    }
+    .lifetime-callout .badge {
+      display: inline-block; background: #c41230; color: #fff;
+      padding: 0.5rem 1.5rem; border-radius: 3px; font-weight: 700;
+      font-size: 0.85rem; letter-spacing: 0.05em; margin-bottom: 1.5rem;
+    }
+    .lifetime-callout h2 {
+      font-family: var(--font-display); color: #fff; font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 500; margin-bottom: 1rem;
+    }
+    .lifetime-callout p { color: rgba(255,255,255,0.6); max-width: 600px; margin: 0 auto; font-size: 1rem; }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--charcoal); padding: 3rem 2rem; text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .footer p { color: rgba(255,255,255,0.35); font-size: 0.8rem; }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0,0,0,0.95); align-items: center; justify-content: center;
+      cursor: pointer;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 90vw; max-height: 90vh; object-fit: contain;
+      border-radius: 2px;
+    }
+    .lightbox-close {
+      position: absolute; top: 1.5rem; right: 2rem;
+      color: #fff; font-size: 2rem; cursor: pointer; font-weight: 300;
+      width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,0.1); border-radius: 50%; border: none;
+    }
+    .lightbox-nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      color: #fff; font-size: 2.5rem; cursor: pointer; font-weight: 300;
+      width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,0.1); border-radius: 50%; border: none;
+      transition: background 0.2s;
+    }
+    .lightbox-nav:hover { background: rgba(255,255,255,0.2); }
+    .lightbox-prev { left: 1.5rem; }
+    .lightbox-next { right: 1.5rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .stats-bar { grid-template-columns: repeat(3, 1fr); }
+      .highlights-inner { grid-template-columns: repeat(2, 1fr); }
+      .feature-row { grid-template-columns: 1fr; }
+      .feature-row.reverse .feature-media { order: 1; }
+      .feature-row.reverse .feature-content { order: 2; }
+      .feature-media { height: 350px; }
+      .feature-content { padding: 3rem 2rem; }
+      .details-grid { grid-template-columns: 1fr; }
+      .gallery-mosaic { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 200px; }
+      .gallery-mosaic .grid-img:nth-child(1) { grid-column: span 2; grid-row: span 1; }
+      .gallery-mosaic .grid-img:nth-child(5) { grid-column: span 1; }
+      .community-grid { grid-template-columns: 1fr; }
+      .community-grid .grid-img { height: 300px; }
+      .photo-grid.trio { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .photo-grid.trio .grid-img { height: 300px; }
+      .photo-grid.duo .grid-img { height: 300px; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 600px) {
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .stat { padding: 1.2rem 0.8rem; }
+      .stat-value { font-size: 1.2rem; }
+      .highlights-inner { grid-template-columns: 1fr; }
+      .photo-grid.quad { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .photo-grid.quad .grid-img { height: 280px; }
+      .photo-grid.duo { grid-template-columns: 1fr; }
+      .photo-grid.duo .grid-img { height: 280px; }
+      .gallery-mosaic { grid-template-columns: 1fr; grid-auto-rows: 250px; }
+      .gallery-mosaic .grid-img:nth-child(1) { grid-column: span 1; }
+      .gallery-mosaic .grid-img:nth-child(5) { grid-column: span 1; }
+      .hero { min-height: 500px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <span class="nav-address">1508 E Sourwood Ct, Gilbert AZ</span>
+  <div class="nav-links">
+    <a href="#kitchen">Kitchen</a>
+    <a href="#living">Living</a>
+    <a href="#primary">Primary Suite</a>
+    <a href="#outdoor">Outdoor</a>
+    <a href="#community">Community</a>
+    <a href="#details">Details</a>
+  </div>
+  <span class="nav-price">$679,000</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Lifetime Fitness Opening Across the Street &mdash; May 2026</div>
+    <h1>1508 E Sourwood Ct</h1>
+    <p class="hero-sub">Gilbert, AZ 85298 &nbsp;|&nbsp; Waterston North Gated Community by Tri Pointe Homes</p>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat">
+    <div class="stat-value">$679K</div>
+    <div class="stat-label">List Price</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">3</div>
+    <div class="stat-label">Bedrooms</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">2.5</div>
+    <div class="stat-label">Bathrooms</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">1,836</div>
+    <div class="stat-label">Sq Ft</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">2023</div>
+    <div class="stat-label">Year Built</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">1</div>
+    <div class="stat-label">Story</div>
+  </div>
+</div>
+
+<!-- HIGHLIGHTS -->
+<div class="highlights">
+  <div class="highlights-inner">
+    <div class="highlight-card">
+      <div class="highlight-icon">&#9670;</div>
+      <div class="highlight-title">$75K+ in Upgrades</div>
+      <div class="highlight-desc">Premium builder and owner upgrades throughout</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">&#9670;</div>
+      <div class="highlight-title">Cul-de-Sac + Park</div>
+      <div class="highlight-desc">Directly adjacent to a community park</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">&#9670;</div>
+      <div class="highlight-title">Turnkey Landscaping</div>
+      <div class="highlight-desc">Full irrigation, lighting, turf &mdash; front and back</div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">&#9670;</div>
+      <div class="highlight-title">Smart Home Ready</div>
+      <div class="highlight-desc">Alarm.com, Schlage Encode, MyQ garage</div>
+    </div>
+  </div>
+</div>
+
+<!-- FRONT EXTERIOR -->
+<div class="section-full">
+  <div class="photo-grid trio">
+    <div class="grid-img"><img src="images/front-1.jpg" alt="Front exterior view 1" loading="lazy"></div>
+    <div class="grid-img"><img src="images/front-2.jpg" alt="Front exterior view 2" loading="lazy"></div>
+    <div class="grid-img"><img src="images/front-3.jpg" alt="Front exterior view 3" loading="lazy"></div>
+  </div>
+</div>
+
+<!-- KITCHEN -->
+<div id="kitchen" class="feature-row">
+  <div class="feature-media">
+    <img src="images/kitchen-1.jpg" alt="Gourmet kitchen with waterfall island" loading="lazy">
+  </div>
+  <div class="feature-content">
+    <div class="section-label">Kitchen</div>
+    <h2 class="section-title">The centerpiece of the home</h2>
+    <p class="section-text">Full GE Profile gourmet package. Denali quartz waterfall island. Two-tone Timberlake cabinetry &mdash; Maple Latte perimeter, Painted Linen island. Kohler Prolific 33" workstation sink with Delta Trinsic Touch2O faucet.</p>
+    <ul class="feature-list">
+      <li>30" 5-burner gas cooktop</li>
+      <li>30" smart convection wall oven with air fry</li>
+      <li>Smart designer wall mount hood</li>
+      <li>42" uppers with crown molding</li>
+      <li>Full Mesmerist Spirit Gloss backsplash</li>
+      <li>Soft-close dovetail drawers &amp; doors, whole home</li>
+      <li>Pendant lighting above island</li>
+    </ul>
+  </div>
+</div>
+
+<!-- KITCHEN GALLERY -->
+<div class="section-full">
+  <div class="photo-grid quad">
+    <div class="grid-img"><img src="images/kitchen-2.jpg" alt="Kitchen view 2" loading="lazy"></div>
+    <div class="grid-img"><img src="images/kitchen-3.jpg" alt="Kitchen view 3" loading="lazy"></div>
+    <div class="grid-img"><img src="images/kitchen-4.jpg" alt="Kitchen view 4" loading="lazy"></div>
+    <div class="grid-img"><img src="images/kitchen-6.jpg" alt="Kitchen view 5" loading="lazy"></div>
+  </div>
+</div>
+
+<!-- GREAT ROOM -->
+<div id="living" class="feature-row reverse">
+  <div class="feature-media">
+    <img src="images/great-room-1.jpg" alt="Great room with multi-slide door" loading="lazy">
+  </div>
+  <div class="feature-content dark">
+    <div class="section-label">Great Room</div>
+    <h2 class="section-title">Indoor-outdoor living, done right</h2>
+    <p class="section-text">A 12-foot multi-slide glass door completely opens the living space to the covered patio. Herringbone pattern Marazzi Merona tile flows through every main living area. Open concept layout connects kitchen, dining, and living seamlessly.</p>
+  </div>
+</div>
+
+<!-- LIVING GALLERY -->
+<div class="section-full">
+  <div class="photo-grid quad">
+    <div class="grid-img"><img src="images/great-room-2.jpg" alt="Great room view" loading="lazy"></div>
+    <div class="grid-img"><img src="images/great-room-3.jpg" alt="Great room to kitchen" loading="lazy"></div>
+    <div class="grid-img"><img src="images/dining-1.jpg" alt="Dining area" loading="lazy"></div>
+    <div class="grid-img"><img src="images/dining-4.jpg" alt="Dining to kitchen" loading="lazy"></div>
+  </div>
+</div>
+
+<!-- PRIMARY SUITE -->
+<div id="primary" class="feature-row">
+  <div class="feature-media">
+    <img src="images/primary-bath-1.jpg" alt="Primary bathroom" loading="lazy">
+  </div>
+  <div class="feature-content warm-bg">
+    <div class="section-label">Primary Suite</div>
+    <h2 class="section-title">Your retreat</h2>
+    <p class="section-text">French doors open directly to the covered patio. The bathroom features a frameless walk-in shower with floor-to-ceiling tile, built-in niche, and bench seat.</p>
+    <ul class="feature-list">
+      <li>Frameless walk-in shower, floor to ceiling tile</li>
+      <li>24x24 wall tile, 3" hex floor tile</li>
+      <li>Dual Kohler undermount sinks</li>
+      <li>Linen quartz countertops</li>
+      <li>Delta Trinsic Brilliance Stainless fixtures</li>
+      <li>Raised 34.5" vanity</li>
+      <li>Walk-in closet</li>
+    </ul>
+  </div>
+</div>
+
+<!-- PRIMARY GALLERY -->
+<div class="section-full">
+  <div class="photo-grid quad">
+    <div class="grid-img"><img src="images/primary-bed-1.jpg" alt="Primary bedroom" loading="lazy"></div>
+    <div class="grid-img"><img src="images/primary-bed-4.jpg" alt="Primary bedroom with patio access" loading="lazy"></div>
+    <div class="grid-img"><img src="images/primary-bath-2.jpg" alt="Primary bath vanity" loading="lazy"></div>
+    <div class="grid-img"><img src="images/primary-bed-2.jpg" alt="Primary bedroom view" loading="lazy"></div>
+  </div>
+</div>
+
+<!-- OUTDOOR -->
+<div id="outdoor" class="feature-row reverse">
+  <div class="feature-media">
+    <img src="images/backyard-3.jpg" alt="Backyard overview" loading="lazy">
+  </div>
+  <div class="feature-content dark">
+    <div class="section-label">Outdoor Living</div>
+    <h2 class="section-title">Fully landscaped, completely turnkey</h2>
+    <p class="section-text">Owner-installed landscaping front and back. No work left for the next owner &mdash; just move in and enjoy.</p>
+    <ul class="feature-list">
+      <li>New synthetic turf, front and back (2023)</li>
+      <li>Full irrigation system throughout</li>
+      <li>Custom landscape lighting, front and back</li>
+      <li>Paver stepping stone walkway</li>
+      <li>Raised planter beds with mature plantings</li>
+      <li>Large covered patio with ceiling fan</li>
+      <li>Outdoor seating area with string lights</li>
+    </ul>
+  </div>
+</div>
+
+<!-- OUTDOOR GALLERY -->
+<div class="section-full">
+  <div class="photo-grid quad">
+    <div class="grid-img"><img src="images/patio-1.jpg" alt="Covered patio" loading="lazy"></div>
+    <div class="grid-img"><img src="images/patio-2.jpg" alt="Covered patio view" loading="lazy"></div>
+    <div class="grid-img"><img src="images/backyard-1.jpg" alt="Backyard turf" loading="lazy"></div>
+    <div class="grid-img"><img src="images/backyard-2.jpg" alt="Backyard seating area" loading="lazy"></div>
+  </div>
+</div>
+
+<!-- ADDITIONAL ROOMS GALLERY -->
+<div class="gallery-section">
+  <div style="max-width:1200px; margin:0 auto; text-align:center;">
+    <div class="section-label">Additional Spaces</div>
+    <h2 class="section-title" style="margin-bottom:0.5rem;">Every room, every detail</h2>
+    <p class="section-text" style="margin:0 auto 2rem;">Powder room, secondary bedrooms, bath, and laundry &mdash; all finished with the same level of care.</p>
+  </div>
+  <div class="gallery-mosaic">
+    <div class="grid-img"><img src="images/bed3-1.jpg" alt="Bedroom 3" loading="lazy"></div>
+    <div class="grid-img"><img src="images/powder-1.jpg" alt="Powder room" loading="lazy"></div>
+    <div class="grid-img"><img src="images/bed2-1.jpg" alt="Bedroom 2" loading="lazy"></div>
+    <div class="grid-img"><img src="images/bath2-1.jpg" alt="Secondary bath" loading="lazy"></div>
+    <div class="grid-img"><img src="images/laundry-1.jpg" alt="Laundry room" loading="lazy"></div>
+    <div class="grid-img"><img src="images/bed3-2.jpg" alt="Bedroom 3 alternate" loading="lazy"></div>
+  </div>
+</div>
+
+<!-- LIFETIME FITNESS CALLOUT -->
+<div class="lifetime-callout">
+  <div class="badge">Opening May 2026</div>
+  <h2>Lifetime Fitness &mdash; directly across the street</h2>
+  <p>World-class fitness, pools, spa, courts, and kids programming. Walk or bike from your front door. This location is about to get even better.</p>
+</div>
+
+<!-- COMMUNITY -->
+<div id="community" class="gallery-section" style="background: #fff;">
+  <div style="max-width:1200px; margin:0 auto; text-align:center;">
+    <div class="section-label">Community</div>
+    <h2 class="section-title">Waterston North &mdash; Gated by Tri Pointe</h2>
+    <p class="section-text" style="margin:0 auto 2rem;">Resort-style pool, community center, multiple parks, and full access to Waterston Central pool and amenities. Cul-de-sac lot directly adjacent to a community park.</p>
+  </div>
+  <div class="community-grid">
+    <div class="grid-img"><img src="images/drone-pool.jpg" alt="Community resort pool" loading="lazy"></div>
+    <div class="grid-img"><img src="images/drone-community.jpg" alt="Aerial community view" loading="lazy"></div>
+  </div>
+</div>
+
+<!-- UPGRADES BANNER -->
+<div class="upgrades-banner">
+  <div class="upgrades-amount">$75,000+</div>
+  <div class="upgrades-label">In Premium Builder &amp; Owner Upgrades</div>
+</div>
+
+<!-- ALL DETAILS -->
+<div id="details" class="section">
+  <div class="section-label">Full Upgrade Details</div>
+  <h2 class="section-title">Everything that went into this home</h2>
+
+  <div class="details-grid">
+    <div class="detail-group">
+      <h4>Kitchen</h4>
+      <ul>
+        <li>GE Profile 30" 5-burner gas cooktop</li>
+        <li>GE Profile 30" smart convection wall oven w/ air fry</li>
+        <li>GE Profile built-in sensor microwave</li>
+        <li>30" smart designer wall mount hood</li>
+        <li>GE Profile fingerprint-resistant dishwasher</li>
+        <li>Denali quartz countertops, Group 4</li>
+        <li>Waterfall quartz island sides</li>
+        <li>Timberlake Beckley Maple Latte cabinets</li>
+        <li>Painted Linen island (two-tone)</li>
+        <li>42" uppers with crown molding</li>
+        <li>Mesmerist Spirit Gloss 3x12 full backsplash</li>
+        <li>Kohler Prolific 33" workstation sink</li>
+        <li>Delta Trinsic Touch2O pull-down faucet</li>
+        <li>Pendant lighting above island</li>
+        <li>LED disc lights</li>
+        <li>Built-in recycle center pull-out</li>
+        <li>Boxed-in refrigerator surround</li>
+        <li>Two-drawer base under cooktop</li>
+      </ul>
+    </div>
+    <div class="detail-group">
+      <h4>Bathrooms</h4>
+      <ul>
+        <li>Frameless walk-in shower (primary)</li>
+        <li>Floor-to-ceiling tile, 24x24 walls</li>
+        <li>3" hex tile shower floor</li>
+        <li>Built-in niche and bench seat</li>
+        <li>Linen quartz countertops (primary)</li>
+        <li>Dual Kohler Verticyl undermount sinks</li>
+        <li>Delta Trinsic Brilliance Stainless faucets</li>
+        <li>Raised vanities to 34.5"</li>
+        <li>Comfort-height elongated toilets</li>
+        <li>Eased edge countertop detail</li>
+        <li>Powder room (added)</li>
+        <li>Cultured marble secondary sinks</li>
+      </ul>
+    </div>
+    <div class="detail-group">
+      <h4>Interior Finish</h4>
+      <ul>
+        <li>Contemporary drywall texture</li>
+        <li>Sherwin-Williams Snowbound paint</li>
+        <li>Six-panel horizontal raised smooth doors</li>
+        <li>Schlage Solstice lever, satin nickel</li>
+        <li>Schlage Encode Smart WiFi deadbolt</li>
+        <li>4" contemporary MDF baseboards</li>
+        <li>2-1/4" contemporary MDF casing</li>
+        <li>Soft-close doors, whole house</li>
+        <li>Dovetail soft-close drawers, whole house</li>
+      </ul>
+    </div>
+    <div class="detail-group">
+      <h4>Flooring</h4>
+      <ul>
+        <li>Marazzi Merona 8x40 tile, herringbone (main areas)</li>
+        <li>Marazzi Merona 8x40 tile, random stagger (wet areas)</li>
+        <li>Shaw Rogue carpet, bedrooms &amp; primary WIC</li>
+        <li>Carpenter 1/2" 6-lb rebond pad</li>
+        <li>$22,602 flooring package</li>
+      </ul>
+    </div>
+    <div class="detail-group">
+      <h4>Structural &amp; Configuration</h4>
+      <ul>
+        <li>Elevation B</li>
+        <li>12' multi-slide glass door (great room)</li>
+        <li>Extended French doors (primary suite)</li>
+        <li>Powder room (structural add)</li>
+        <li>Catalina slate paver driveway/walkway</li>
+        <li>Keyless garage entry keypad</li>
+        <li>Soft water loop plumbed</li>
+        <li>Ceiling fan prewire, covered patio</li>
+        <li>Additional 110v outlets (3)</li>
+        <li>Braced ceiling fixture, dining</li>
+      </ul>
+    </div>
+    <div class="detail-group">
+      <h4>Owner Additions</h4>
+      <ul>
+        <li>Full landscaping, front and back</li>
+        <li>Irrigation system throughout</li>
+        <li>Landscape lighting, front and back</li>
+        <li>Synthetic turf, front and back (2023)</li>
+        <li>Paver stepping stone walkway</li>
+        <li>Raised planter beds</li>
+        <li>String lights, backyard</li>
+        <li>Ceiling fans throughout</li>
+        <li>Alarm.com smart home system</li>
+        <li>MyQ smart garage door</li>
+        <li>Overhead garage storage racks</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- PROPERTY INFO -->
+<div class="section-warm" style="padding: 3rem 2rem;">
+  <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns: repeat(3, 1fr); gap:2rem; text-align:center;">
+    <div>
+      <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--warm); font-weight:600;">Address</div>
+      <div style="margin-top:0.5rem; font-weight:500;">1508 E Sourwood Ct<br>Gilbert, AZ 85298</div>
+    </div>
+    <div>
+      <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--warm); font-weight:600;">Lot Size</div>
+      <div style="margin-top:0.5rem; font-weight:500;">0.14 Acres / 6,098 Sq Ft</div>
+    </div>
+    <div>
+      <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--warm); font-weight:600;">Community</div>
+      <div style="margin-top:0.5rem; font-weight:500;">Waterston North (Gated)<br>by Tri Pointe Homes</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>&copy; 2026 &nbsp;|&nbsp; 1508 E Sourwood Ct, Gilbert, AZ 85298</p>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">&#8249;</button>
+  <img id="lightbox-img" src="" alt="Full size photo">
+  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">&#8250;</button>
+</div>
+
+<script>
+  // Collect all gallery images
+  const images = Array.from(document.querySelectorAll('.grid-img img')).map(img => img.src);
+  let currentIdx = 0;
+
+  document.querySelectorAll('.grid-img').forEach((el, i) => {
+    el.addEventListener('click', () => {
+      currentIdx = i;
+      openLightbox(images[i]);
+    });
+  });
+
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function navLightbox(dir) {
+    event.stopPropagation();
+    currentIdx = (currentIdx + dir + images.length) % images.length;
+    document.getElementById('lightbox-img').src = images[currentIdx];
+  }
+
+  document.getElementById('lightbox').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('lightbox')) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!document.getElementById('lightbox').classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') navLightbox(-1);
+    if (e.key === 'ArrowRight') navLightbox(1);
+  });
+</script>
+
+</body>
+</html>
