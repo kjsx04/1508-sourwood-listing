@@ -44,15 +44,9 @@
 
     /* ── HERO ── */
     .hero {
-      position: relative; height: 100vh; min-height: 600px;
-      background: url('images/hero-drone-lifetime.jpg') center center / cover no-repeat;
-      display: flex; align-items: flex-end; justify-content: center;
-      margin-bottom: 0;
-    }
-    .hero::before {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 120px;
-      background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 100%);
-      z-index: 1;
+      position: relative; height: calc(100vh - 60px);
+      background: url('images/hero-drone-lifetime.jpg') center center / contain no-repeat;
+      background-color: #1a1a1a;
     }
     .hero::before {
       content: ''; position: absolute; inset: 0;
@@ -60,10 +54,9 @@
     }
     .hero-content { display: none; }
 
-    /* ── STATS BAR (now hero header) ── */
+    /* ── STATS BAR ── */
     .stats-bar {
-      position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
-      background: rgba(26,26,26,0.85); backdrop-filter: blur(8px);
+      background: var(--charcoal);
       padding: 0;
       display: grid; grid-template-columns: repeat(8, 1fr);
     }
@@ -342,42 +335,43 @@
     <h1>1508 E Sourwood Ct</h1>
     <p class="hero-sub">Gilbert, AZ 85298 &nbsp;|&nbsp; Waterston North Gated Community by Tri Pointe Homes</p>
   </div>
-  <!-- STATS BAR INSIDE HERO -->
-  <div class="stats-bar">
-    <div class="stat">
-      <div class="stat-value-sm">1508 E Sourwood Ct</div>
-      <div class="stat-label">Gilbert, AZ 85298</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value">3</div>
-      <div class="stat-label">Bedrooms</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value">2.5</div>
-      <div class="stat-label">Bathrooms</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value">1,836</div>
-      <div class="stat-label">Sq Ft</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value">2023</div>
-      <div class="stat-label">Year Built</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value">1</div>
-      <div class="stat-label">Story</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value-sm" style="color:var(--warm-light);">Call for Pricing</div>
-      <div class="stat-label">Lifetime Fitness across the street</div>
-    </div>
-    <div class="stat" style="border-right:none;">
-      <div class="stat-value-sm">Stefanie Matranga</div>
-      <div class="stat-label"><a href="tel:3109463100" style="color:var(--warm-light);">310.946.3100</a></div>
-    </div>
-  </div>
 </section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat">
+    <div class="stat-value-sm">1508 E Sourwood Ct</div>
+    <div class="stat-label">Gilbert, AZ 85298</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">3</div>
+    <div class="stat-label">Bedrooms</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">2.5</div>
+    <div class="stat-label">Bathrooms</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">1,836</div>
+    <div class="stat-label">Sq Ft</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">2023</div>
+    <div class="stat-label">Year Built</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">1</div>
+    <div class="stat-label">Story</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value-sm" style="color:var(--warm-light);">Call for Pricing</div>
+    <div class="stat-label">Lifetime Fitness across the street</div>
+  </div>
+  <div class="stat" style="border-right:none;">
+    <div class="stat-value-sm">Stefanie Matranga</div>
+    <div class="stat-label"><a href="tel:3109463100" style="color:var(--warm-light);">310.946.3100</a></div>
+  </div>
+</div>
 
 <!-- HIGHLIGHTS -->
 <div class="highlights">
