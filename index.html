@@ -102,12 +102,28 @@
     }
     .highlights-inner {
       max-width: 1200px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
     }
-    .highlight-card { text-align: center; padding: 1.5rem 1rem; }
-    .highlight-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
-    .highlight-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.3rem; }
-    .highlight-desc { color: var(--gray); font-size: 0.85rem; line-height: 1.5; }
+    .highlights-label {
+      text-align: center; max-width: 1200px; margin: 0 auto 1.5rem;
+    }
+    .highlight-card {
+      position: relative; overflow: hidden; border-radius: 6px;
+      min-height: 220px; display: flex; align-items: flex-end;
+      cursor: pointer;
+    }
+    .highlight-card img {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .highlight-card:hover img { transform: scale(1.05); }
+    .highlight-card-overlay {
+      position: relative; z-index: 2; width: 100%;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.0) 100%);
+      padding: 2.5rem 1.2rem 1.2rem;
+    }
+    .highlight-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.2rem; color: #fff; }
+    .highlight-desc { color: rgba(255,255,255,0.7); font-size: 0.82rem; line-height: 1.4; }
 
     /* ── PHOTO GRID ── */
     .photo-grid {
@@ -270,7 +286,7 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .stats-bar { grid-template-columns: repeat(3, 1fr); }
-      .highlights-inner { grid-template-columns: repeat(2, 1fr); }
+      .highlights-inner { grid-template-columns: repeat(2, 1fr); gap: 8px; }
       .feature-row { grid-template-columns: 1fr; }
       .feature-row.reverse .feature-media { order: 1; }
       .feature-row.reverse .feature-content { order: 2; }
@@ -291,7 +307,8 @@
       .stats-bar { grid-template-columns: repeat(2, 1fr); }
       .stat { padding: 1.2rem 0.8rem; }
       .stat-value { font-size: 1.2rem; }
-      .highlights-inner { grid-template-columns: 1fr; }
+      .highlights-inner { grid-template-columns: 1fr 1fr; gap: 6px; }
+      .highlight-card { min-height: 180px; }
       .photo-grid.quad { grid-template-columns: 1fr; grid-template-rows: auto; }
       .photo-grid.quad .grid-img { height: 280px; }
       .photo-grid.duo { grid-template-columns: 1fr; }
@@ -358,26 +375,66 @@
 
 <!-- HIGHLIGHTS -->
 <div class="highlights">
+  <div class="highlights-label">
+    <div class="section-label">At a Glance</div>
+    <h2 class="section-title">What sets this home apart</h2>
+  </div>
   <div class="highlights-inner">
     <div class="highlight-card">
-      <div class="highlight-icon">&#9670;</div>
-      <div class="highlight-title">$75K+ in Upgrades</div>
-      <div class="highlight-desc">Premium builder and owner upgrades throughout</div>
+      <img src="images/backyard-3.jpg" alt="Turnkey landscaping" loading="lazy">
+      <div class="highlight-card-overlay">
+        <div class="highlight-title">Turnkey Landscaping</div>
+        <div class="highlight-desc">Full irrigation, lighting, turf front &amp; back. Nothing left to do.</div>
+      </div>
     </div>
     <div class="highlight-card">
-      <div class="highlight-icon">&#9670;</div>
-      <div class="highlight-title">Cul-de-Sac + Park</div>
-      <div class="highlight-desc">Directly adjacent to a community park</div>
+      <img src="images/dining-3.jpg" alt="Herringbone tile flooring" loading="lazy">
+      <div class="highlight-card-overlay">
+        <div class="highlight-title">Herringbone Tile Throughout</div>
+        <div class="highlight-desc">$22K Marazzi Merona 8x40 tile package across all living areas.</div>
+      </div>
     </div>
     <div class="highlight-card">
-      <div class="highlight-icon">&#9670;</div>
-      <div class="highlight-title">Turnkey Landscaping</div>
-      <div class="highlight-desc">Full irrigation, lighting, turf &mdash; front and back</div>
+      <img src="images/powder-1.jpg" alt="Powder room" loading="lazy">
+      <div class="highlight-card-overlay">
+        <div class="highlight-title">Powder Room (2.5 Bath)</div>
+        <div class="highlight-desc">Added half bath changes how buyers find this home on MLS.</div>
+      </div>
     </div>
     <div class="highlight-card">
-      <div class="highlight-icon">&#9670;</div>
-      <div class="highlight-title">Smart Home Ready</div>
-      <div class="highlight-desc">Alarm.com, Schlage Encode, MyQ garage</div>
+      <img src="images/great-room-1.jpg" alt="12-foot multi-slide door" loading="lazy">
+      <div class="highlight-card-overlay">
+        <div class="highlight-title">12-Foot Multi-Slide Door</div>
+        <div class="highlight-desc">Indoor-outdoor living. The wow moment on every showing.</div>
+      </div>
+    </div>
+    <div class="highlight-card">
+      <img src="images/primary-bath-1.jpg" alt="Frameless walk-in shower" loading="lazy">
+      <div class="highlight-card-overlay">
+        <div class="highlight-title">Frameless Walk-In Shower</div>
+        <div class="highlight-desc">Floor-to-ceiling tile, bench seat, hex floors. Spa-level primary bath.</div>
+      </div>
+    </div>
+    <div class="highlight-card">
+      <img src="images/kitchen-1.jpg" alt="GE Profile gourmet kitchen" loading="lazy">
+      <div class="highlight-card-overlay">
+        <div class="highlight-title">GE Profile Gourmet Kitchen</div>
+        <div class="highlight-desc">Gas cooktop, smart wall oven, designer hood. Full premium package.</div>
+      </div>
+    </div>
+    <div class="highlight-card">
+      <img src="images/kitchen-5.jpg" alt="Quartz waterfall island" loading="lazy">
+      <div class="highlight-card-overlay">
+        <div class="highlight-title">Quartz Waterfall Island</div>
+        <div class="highlight-desc">Denali quartz with waterfall edges. Two-tone Timberlake cabinetry.</div>
+      </div>
+    </div>
+    <div class="highlight-card">
+      <img src="images/kitchen-6.jpg" alt="Two-tone cabinetry" loading="lazy">
+      <div class="highlight-card-overlay">
+        <div class="highlight-title">Two-Tone Cabinetry</div>
+        <div class="highlight-desc">Maple Latte + Painted Linen. 42" uppers, crown, soft-close everything.</div>
+      </div>
     </div>
   </div>
 </div>
