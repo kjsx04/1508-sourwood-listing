@@ -52,33 +52,24 @@
       content: ''; position: absolute; inset: 0;
       background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.2) 100%);
     }
-    .hero-content {
-      position: relative; z-index: 2; text-align: center;
-      padding: 3rem 2rem 4rem; max-width: 800px;
-    }
-    .hero-badge {
-      display: inline-block; background: var(--warm); color: #fff;
-      padding: 0.4rem 1.2rem; border-radius: 2px; font-size: 0.8rem;
-      font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.2rem;
-    }
-    .hero h1 {
-      font-family: var(--font-display); color: #fff; font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 500; line-height: 1.2; margin-bottom: 0.8rem;
-    }
-    .hero-sub { color: rgba(255,255,255,0.85); font-size: 1.1rem; font-weight: 400; }
+    .hero-content { display: none; }
 
-    /* ── STATS BAR ── */
+    /* ── STATS BAR (now hero header) ── */
     .stats-bar {
-      background: var(--charcoal); padding: 0;
-      display: grid; grid-template-columns: repeat(6, 1fr);
+      position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
+      background: rgba(26,26,26,0.85); backdrop-filter: blur(8px);
+      padding: 0;
+      display: grid; grid-template-columns: repeat(8, 1fr);
     }
     .stat {
-      padding: 1.8rem 1rem; text-align: center;
+      padding: 1.5rem 0.8rem; text-align: center;
       border-right: 1px solid rgba(255,255,255,0.08);
     }
     .stat:last-child { border-right: none; }
-    .stat-value { color: var(--warm-light); font-size: 1.5rem; font-weight: 700; }
-    .stat-label { color: rgba(255,255,255,0.5); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.3rem; }
+    .stat-value { color: var(--warm-light); font-size: 1.3rem; font-weight: 700; }
+    .stat-label { color: rgba(255,255,255,0.5); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.3rem; }
+    .stat-value-sm { color: #fff; font-size: 0.95rem; font-weight: 600; }
+    .stat-value-sm a { color: var(--warm-light); text-decoration: none; }
 
     /* ── SECTIONS ── */
     .section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
@@ -285,7 +276,7 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      .stats-bar { grid-template-columns: repeat(3, 1fr); }
+      .stats-bar { grid-template-columns: repeat(4, 1fr); }
       .highlights-inner { grid-template-columns: repeat(2, 1fr); gap: 8px; }
       .feature-row { grid-template-columns: 1fr; }
       .feature-row.reverse .feature-media { order: 1; }
@@ -304,7 +295,9 @@
       .nav-links { display: none; }
     }
     @media (max-width: 600px) {
-      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .stats-bar { grid-template-columns: repeat(4, 1fr); }
+      .stat { padding: 1rem 0.5rem; }
+      .stat-value { font-size: 1.1rem; }
       .stat { padding: 1.2rem 0.8rem; }
       .stat-value { font-size: 1.2rem; }
       .highlights-inner { grid-template-columns: 1fr 1fr; gap: 6px; }
@@ -343,35 +336,42 @@
     <h1>1508 E Sourwood Ct</h1>
     <p class="hero-sub">Gilbert, AZ 85298 &nbsp;|&nbsp; Waterston North Gated Community by Tri Pointe Homes</p>
   </div>
+  <!-- STATS BAR INSIDE HERO -->
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="stat-value-sm">1508 E Sourwood Ct</div>
+      <div class="stat-label">Gilbert, AZ 85298</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">3</div>
+      <div class="stat-label">Bedrooms</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">2.5</div>
+      <div class="stat-label">Bathrooms</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">1,836</div>
+      <div class="stat-label">Sq Ft</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">2023</div>
+      <div class="stat-label">Year Built</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">1</div>
+      <div class="stat-label">Story</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value-sm" style="color:var(--warm-light);">Call for Pricing</div>
+      <div class="stat-label">Lifetime Fitness across the street</div>
+    </div>
+    <div class="stat" style="border-right:none;">
+      <div class="stat-value-sm">Stefanie Matranga</div>
+      <div class="stat-label"><a href="tel:3109463100" style="color:var(--warm-light);">310.946.3100</a></div>
+    </div>
+  </div>
 </section>
-
-<!-- STATS -->
-<div class="stats-bar">
-  <div class="stat">
-    <div class="stat-value" style="font-size:1.1rem;">Call for Pricing</div>
-    <div class="stat-label">310.946.3100</div>
-  </div>
-  <div class="stat">
-    <div class="stat-value">3</div>
-    <div class="stat-label">Bedrooms</div>
-  </div>
-  <div class="stat">
-    <div class="stat-value">2.5</div>
-    <div class="stat-label">Bathrooms</div>
-  </div>
-  <div class="stat">
-    <div class="stat-value">1,836</div>
-    <div class="stat-label">Sq Ft</div>
-  </div>
-  <div class="stat">
-    <div class="stat-value">2023</div>
-    <div class="stat-label">Year Built</div>
-  </div>
-  <div class="stat">
-    <div class="stat-value">1</div>
-    <div class="stat-label">Story</div>
-  </div>
-</div>
 
 <!-- HIGHLIGHTS -->
 <div class="highlights">
@@ -383,56 +383,48 @@
       <img src="images/backyard-3.jpg" alt="Turnkey landscaping" loading="lazy">
       <div class="highlight-card-overlay">
         <div class="highlight-title">Turnkey Landscaping</div>
-        <div class="highlight-desc">Full irrigation, lighting, turf front &amp; back. Nothing left to do.</div>
       </div>
     </div>
     <div class="highlight-card">
       <img src="images/dining-3.jpg" alt="Herringbone tile flooring" loading="lazy">
       <div class="highlight-card-overlay">
-        <div class="highlight-title">Herringbone Tile Throughout</div>
-        <div class="highlight-desc">$22K Marazzi Merona 8x40 tile package across all living areas.</div>
+        <div class="highlight-title">Herringbone Tile</div>
       </div>
     </div>
     <div class="highlight-card">
       <img src="images/powder-1.jpg" alt="Powder room" loading="lazy">
       <div class="highlight-card-overlay">
         <div class="highlight-title">Powder Room (2.5 Bath)</div>
-        <div class="highlight-desc">Added half bath changes how buyers find this home on MLS.</div>
       </div>
     </div>
     <div class="highlight-card">
       <img src="images/great-room-1.jpg" alt="12-foot multi-slide door" loading="lazy">
       <div class="highlight-card-overlay">
         <div class="highlight-title">12-Foot Multi-Slide Door</div>
-        <div class="highlight-desc">Indoor-outdoor living. The wow moment on every showing.</div>
       </div>
     </div>
     <div class="highlight-card">
       <img src="images/primary-bath-1.jpg" alt="Frameless walk-in shower" loading="lazy">
       <div class="highlight-card-overlay">
         <div class="highlight-title">Frameless Walk-In Shower</div>
-        <div class="highlight-desc">Floor-to-ceiling tile, bench seat, hex floors. Spa-level primary bath.</div>
       </div>
     </div>
     <div class="highlight-card">
       <img src="images/kitchen-1.jpg" alt="GE Profile gourmet kitchen" loading="lazy">
       <div class="highlight-card-overlay">
         <div class="highlight-title">GE Profile Gourmet Kitchen</div>
-        <div class="highlight-desc">Gas cooktop, smart wall oven, designer hood. Full premium package.</div>
       </div>
     </div>
     <div class="highlight-card">
       <img src="images/kitchen-5.jpg" alt="Quartz waterfall island" loading="lazy">
       <div class="highlight-card-overlay">
         <div class="highlight-title">Quartz Waterfall Island</div>
-        <div class="highlight-desc">Denali quartz with waterfall edges. Two-tone Timberlake cabinetry.</div>
       </div>
     </div>
     <div class="highlight-card">
       <img src="images/kitchen-6.jpg" alt="Two-tone cabinetry" loading="lazy">
       <div class="highlight-card-overlay">
         <div class="highlight-title">Two-Tone Cabinetry</div>
-        <div class="highlight-desc">Maple Latte + Painted Linen. 42" uppers, crown, soft-close everything.</div>
       </div>
     </div>
   </div>
