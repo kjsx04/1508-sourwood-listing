@@ -707,7 +707,80 @@
   <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">&#8250;</button>
 </div>
 
+<!-- EDIT MODE CONTROLS -->
+<div id="edit-panel" style="display:none; position:fixed; bottom:20px; left:50%; transform:translateX(-50%); z-index:9999;
+  background:rgba(0,0,0,0.9); color:#fff; padding:16px 24px; border-radius:10px;
+  font-family:'DM Sans',sans-serif; font-size:13px; backdrop-filter:blur(10px);
+  box-shadow:0 10px 40px rgba(0,0,0,0.4); display:flex; flex-direction:column; gap:10px; min-width:320px;">
+  <div style="display:flex; justify-content:space-between; align-items:center;">
+    <strong style="font-size:14px;">Hero Image Editor</strong>
+    <button onclick="toggleEdit()" style="background:#333; color:#fff; border:none; padding:4px 12px; border-radius:4px; cursor:pointer; font-size:12px;">Close</button>
+  </div>
+  <div style="display:flex; align-items:center; gap:10px;">
+    <label style="white-space:nowrap;">Size:</label>
+    <input type="range" id="img-scale" min="30" max="100" value="80" style="flex:1; accent-color:#c4a97d;" oninput="updateScale(this.value)">
+    <span id="scale-val" style="min-width:35px;">80%</span>
+  </div>
+  <div style="display:flex; align-items:center; gap:10px;">
+    <label style="white-space:nowrap;">Vertical:</label>
+    <input type="range" id="img-y" min="0" max="100" value="50" style="flex:1; accent-color:#c4a97d;" oninput="updateY(this.value)">
+    <span id="y-val" style="min-width:35px;">50%</span>
+  </div>
+  <p style="color:#888; font-size:11px; margin:0;">Drag the image directly or use sliders. Tell me when it looks right.</p>
+</div>
+
 <script>
+  // Edit mode
+  let editMode = false;
+  const heroImg = document.querySelector('.hero-img');
+  const hero = document.querySelector('.hero');
+
+  function toggleEdit() {
+    editMode = !editMode;
+    const panel = document.getElementById('edit-panel');
+    panel.style.display = editMode ? 'flex' : 'none';
+    heroImg.style.cursor = editMode ? 'grab' : 'default';
+  }
+
+  // Press 'e' to toggle edit mode
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'e' && !e.target.closest('input,textarea')) toggleEdit();
+  });
+
+  function updateScale(val) {
+    document.getElementById('scale-val').textContent = val + '%';
+    heroImg.style.maxWidth = val + '%';
+    heroImg.style.maxHeight = 'calc(' + (val / 100 * 80 + 20) + 'vh - 200px)';
+  }
+
+  function updateY(val) {
+    document.getElementById('y-val').textContent = val + '%';
+    hero.style.justifyContent = 'flex-start';
+    heroImg.style.marginTop = (val / 100 * (hero.offsetHeight - heroImg.offsetHeight - 200) + 70) + 'px';
+  }
+
+  // Drag support
+  let isDragging = false, startX, startY, startLeft, startTop;
+  heroImg.addEventListener('mousedown', (e) => {
+    if (!editMode) return;
+    isDragging = true;
+    heroImg.style.cursor = 'grabbing';
+    heroImg.style.position = 'relative';
+    startX = e.clientX;
+    startY = e.clientY;
+    startLeft = parseInt(heroImg.style.left || 0);
+    startTop = parseInt(heroImg.style.top || 0);
+    e.preventDefault();
+  });
+  document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    heroImg.style.left = (startLeft + e.clientX - startX) + 'px';
+    heroImg.style.top = (startTop + e.clientY - startY) + 'px';
+  });
+  document.addEventListener('mouseup', () => {
+    if (isDragging) { isDragging = false; heroImg.style.cursor = 'grab'; }
+  });
+
   // Collect all gallery images
   const images = Array.from(document.querySelectorAll('.grid-img img')).map(img => img.src);
   let currentIdx = 0;
